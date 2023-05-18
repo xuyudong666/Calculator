@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\QuikcCalc.Domain\QuickCalc.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
