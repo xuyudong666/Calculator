@@ -3,7 +3,11 @@ namespace Calculator.Domain.Mortgages;
 
 public class PublicFundLoanCalculator : Mortgate, ILoanCalculator
 {
-    public string CalculateEqualPrincipal()
+    public PublicFundLoanCalculator(decimal loanAmount, decimal interestRate, int loanTerm) : base(loanAmount, interestRate, loanTerm)
+    {
+    }
+
+    public decimal CalculateEqualPrincipal()
     {
         decimal monthlyInterestRate = InterestRate / 12 / 100;
         decimal monthlyPayment = LoanAmount / LoanTerm;
@@ -19,14 +23,14 @@ public class PublicFundLoanCalculator : Mortgate, ILoanCalculator
         decimal totalPayment = LoanAmount + totalInterest;
         decimal monthlyPaymentWithInterest = totalPayment / LoanTerm;
 
-        return monthlyPaymentWithInterest.ToString("0.00"); ;
+        return monthlyPaymentWithInterest;
     }
 
-    public string CalculateEqualInstallment()
+    public decimal CalculateEqualInstallment()
     {
         decimal monthlyInterestRate = InterestRate / 12 / 100;
         decimal monthlyPayment = (LoanAmount * monthlyInterestRate * (decimal)Math.Pow(1 + (double)monthlyInterestRate, LoanTerm)) / ((decimal)Math.Pow(1 + (double)monthlyInterestRate, LoanTerm) - 1);
 
-        return monthlyPayment.ToString("0.00"); ;
+        return monthlyPayment;
     }
 }
