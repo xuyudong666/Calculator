@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using QuickCalc.App.ViewModels;
 
 namespace QuickCalc.App
 {
@@ -14,7 +15,8 @@ namespace QuickCalc.App
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<LabelViewModel>();
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif

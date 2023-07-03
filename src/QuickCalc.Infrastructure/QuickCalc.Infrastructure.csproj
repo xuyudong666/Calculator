@@ -10,4 +10,8 @@
     <ProjectReference Include="..\QuikcCalc.Domain\QuickCalc.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Mortgages\" />
+  </ItemGroup>
+
 </Project>

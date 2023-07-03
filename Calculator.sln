@@ -17,11 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCalc.Domain.Shared", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCalc.Infrastructure", "src\QuickCalc.Infrastructure\QuickCalc.Infrastructure.csproj", "{689AC1BF-B108-40E0-9F27-ADFB022E7148}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuikcCalc.App.UnitTests", "test\QuikcCalc.App.UnitTests\QuikcCalc.App.UnitTests.csproj", "{2721A44A-7186-40D7-AB5F-A691A3A30797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCalc.App.UnitTests", "test\QuikcCalc.App.UnitTests\QuickCalc.App.UnitTests.csproj", "{2721A44A-7186-40D7-AB5F-A691A3A30797}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuikcCalc.Infrastructure.UnitTests", "test\QuikcCalc.Infrastructure.UnitTests\QuikcCalc.Infrastructure.UnitTests.csproj", "{3BECA9AC-3F91-4F13-A8DD-E0B29CD1575D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCalc.Infrastructure.UnitTests", "test\QuikcCalc.Infrastructure.UnitTests\QuickCalc.Infrastructure.UnitTests.csproj", "{3BECA9AC-3F91-4F13-A8DD-E0B29CD1575D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuikcCalc.Domain.Shared.UnitTests", "test\QuikcCalc.Domain.Shared.UnitTests\QuikcCalc.Domain.Shared.UnitTests.csproj", "{8720EA1F-D9C1-4C52-95E7-EEECC8344E61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCalc.Domain.Shared.UnitTests", "test\QuikcCalc.Domain.Shared.UnitTests\QuickCalc.Domain.Shared.UnitTests.csproj", "{8720EA1F-D9C1-4C52-95E7-EEECC8344E61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
