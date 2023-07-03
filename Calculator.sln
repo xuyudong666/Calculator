@@ -21,9 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuikcCalc.Infrastructure.Un
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuikcCalc.Domain.Shared.UnitTests", "test\QuikcCalc.Domain.Shared.UnitTests\QuikcCalc.Domain.Shared.UnitTests.csproj", "{8720EA1F-D9C1-4C52-95E7-EEECC8344E61}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCalc.Application", "QuickCalc.Application\QuickCalc.Application.csproj", "{8AA079A5-67D1-40F5-8E46-3D8600CA0A31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCalc.Application", "src\QuickCalc.Application\QuickCalc.Application.csproj", "{59A6968F-DEAF-4BFA-B066-601939C39527}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCalc.Application.Desktop", "QuickCalc.Application.Desktop\QuickCalc.Application.Desktop.csproj", "{44CF521C-4B07-4900-82BA-7C9C6BDFBCAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QuickCalc.Application.Desktop", "src\QuickCalc.Application.Desktop\QuickCalc.Application.Desktop.csproj", "{DA5C668A-2C1F-4D67-8FA8-DEC667F8A261}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,14 +59,14 @@ Global
 		{8720EA1F-D9C1-4C52-95E7-EEECC8344E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8720EA1F-D9C1-4C52-95E7-EEECC8344E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8720EA1F-D9C1-4C52-95E7-EEECC8344E61}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8AA079A5-67D1-40F5-8E46-3D8600CA0A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8AA079A5-67D1-40F5-8E46-3D8600CA0A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8AA079A5-67D1-40F5-8E46-3D8600CA0A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8AA079A5-67D1-40F5-8E46-3D8600CA0A31}.Release|Any CPU.Build.0 = Release|Any CPU
-		{44CF521C-4B07-4900-82BA-7C9C6BDFBCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44CF521C-4B07-4900-82BA-7C9C6BDFBCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44CF521C-4B07-4900-82BA-7C9C6BDFBCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44CF521C-4B07-4900-82BA-7C9C6BDFBCAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59A6968F-DEAF-4BFA-B066-601939C39527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59A6968F-DEAF-4BFA-B066-601939C39527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59A6968F-DEAF-4BFA-B066-601939C39527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59A6968F-DEAF-4BFA-B066-601939C39527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA5C668A-2C1F-4D67-8FA8-DEC667F8A261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA5C668A-2C1F-4D67-8FA8-DEC667F8A261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA5C668A-2C1F-4D67-8FA8-DEC667F8A261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA5C668A-2C1F-4D67-8FA8-DEC667F8A261}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,8 +79,8 @@ Global
 		{2721A44A-7186-40D7-AB5F-A691A3A30797} = {233E38C3-119E-4362-A25A-10E756C1E1FD}
 		{3BECA9AC-3F91-4F13-A8DD-E0B29CD1575D} = {233E38C3-119E-4362-A25A-10E756C1E1FD}
 		{8720EA1F-D9C1-4C52-95E7-EEECC8344E61} = {233E38C3-119E-4362-A25A-10E756C1E1FD}
-		{8AA079A5-67D1-40F5-8E46-3D8600CA0A31} = {F1480F29-3985-480E-A7FB-9F6E3AA86B77}
-		{44CF521C-4B07-4900-82BA-7C9C6BDFBCAB} = {F1480F29-3985-480E-A7FB-9F6E3AA86B77}
+		{59A6968F-DEAF-4BFA-B066-601939C39527} = {F1480F29-3985-480E-A7FB-9F6E3AA86B77}
+		{DA5C668A-2C1F-4D67-8FA8-DEC667F8A261} = {F1480F29-3985-480E-A7FB-9F6E3AA86B77}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7721CF44-CADF-45E2-A5CB-B8F185779133}
