@@ -3,9 +3,9 @@
 /// <summary>
 /// 商业贷款
 /// </summary>
-public class BusinessLoanCalculator : ILoanCalculator
+public class CommercialLoanCalculator : ILoanCalculator
 {
-    public BusinessLoanCalculator(decimal loanAmount, decimal interestRate, int loanTerm, decimal lpr, decimal spreadRate)
+    public CommercialLoanCalculator(decimal loanAmount, decimal interestRate, int loanTerm, decimal lpr, decimal spreadRate)
     {
         LoanAmount = loanAmount;
         InterestRate = interestRate;
@@ -49,7 +49,7 @@ public class BusinessLoanCalculator : ILoanCalculator
     /// 等额本息还款方式计算每月还款额
     /// </summary>
     /// <returns></returns>
-    public string CalculateEqualInstallment()
+    public decimal CalculateEqualInstallment()
     {
         // 还款期数
         int numberOfPayments = LoanTerm * 12;
@@ -60,14 +60,14 @@ public class BusinessLoanCalculator : ILoanCalculator
         decimal denominator = (decimal)Math.Pow(1 + (double)monthlyInterestRate, numberOfPayments) - 1;
 
         decimal monthlyPayment = numerator / denominator;
-        return monthlyPayment.ToString("0.00");
+        return monthlyPayment;
     }
 
     /// <summary>
     /// 等额本金还款方式计算首月还款金额
     /// </summary>
     /// <returns></returns>
-    public string CalculateEqualPrincipal()
+    public decimal CalculateEqualPrincipal()
     {
         // 还款期数
         int numberOfPayments = LoanTerm * 12;
@@ -75,7 +75,7 @@ public class BusinessLoanCalculator : ILoanCalculator
         decimal monthlyInterestRate = CalculateInterestRate() / 12 / 100;
 
         decimal firstMonthPayment = LoanAmount / numberOfPayments + LoanAmount * monthlyInterestRate;
-        return firstMonthPayment.ToString("0.00");
+        return firstMonthPayment;
     }
 
     /// <summary>
@@ -83,7 +83,7 @@ public class BusinessLoanCalculator : ILoanCalculator
     /// </summary>
     /// <param name="month"></param>
     /// <returns></returns>
-    public string CalculateSubsequentMonthPayment(int month)
+    public decimal CalculateSubsequentMonthPayment(int month)
     {
         // 还款期数
         int numberOfPayments = LoanTerm * 12;
@@ -92,6 +92,6 @@ public class BusinessLoanCalculator : ILoanCalculator
 
         decimal subsequentMonthPayment = LoanAmount / numberOfPayments +
             (LoanAmount - month * (LoanAmount / numberOfPayments)) * monthlyInterestRate;
-        return subsequentMonthPayment.ToString("0.00");
+        return subsequentMonthPayment;
     }
 }

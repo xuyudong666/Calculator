@@ -6,10 +6,10 @@ public interface ILoanCalculator
     /// 等额本金
     /// </summary>
     /// <returns></returns>
-    public string CalculateEqualPrincipal();
+    public decimal CalculateEqualPrincipal();
     /// <summary>
     /// 等额本息
     /// </summary>
     /// <returns></returns>
-    public string CalculateEqualInstallment();
+    public decimal CalculateEqualInstallment();
 }
