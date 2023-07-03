@@ -1,4 +1,4 @@
-using QuickCalc.Domain.Mortgages;
+using Calculator.Domain.Mortgages;
 
 namespace Calculator.Doamin.Tests.Mortgages;
 
