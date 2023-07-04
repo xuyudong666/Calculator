@@ -3,7 +3,8 @@ namespace Calculator.Domain.Mortgages;
 
 public class PublicFundLoanCalculator : Mortgate, ILoanCalculator
 {
-    public PublicFundLoanCalculator(decimal loanAmount, decimal interestRate, int loanTerm) : base(loanAmount, interestRate, loanTerm)
+    public PublicFundLoanCalculator(decimal loanAmount, decimal interestRate, int loanTerm)
+        : base(loanAmount, interestRate, loanTerm)
     {
     }
 
