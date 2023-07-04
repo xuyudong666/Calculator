@@ -9,7 +9,7 @@ public class BusinessLoanCalculatorTests
     {
         CommercialLoanCalculator morgate = new(1000000, 4.2m, 20, 4.2m, 0);
         var result = morgate.CalculateEqualInstallment();
-        Assert.Equal("6165.71", result);
+        Assert.Equal(6165.71m, result);
     }
 
     [Fact]
@@ -17,7 +17,7 @@ public class BusinessLoanCalculatorTests
     {
         CommercialLoanCalculator morgate = new(1000000, 4.2m, 20, 4.2m, 0);
         var result = morgate.CalculateEqualPrincipal();
-        Assert.Equal("7666.67", result);
+        Assert.Equal(7666.67m, result);
     }
 
     [Fact]
@@ -26,6 +26,6 @@ public class BusinessLoanCalculatorTests
         CommercialLoanCalculator morgate = new(1000000, 4.2m, 20, 4.2m, 0);
         morgate.CalculateEqualPrincipal();
         var result = morgate.CalculateSubsequentMonthPayment(1);
-        Assert.Equal("7652.08", result);
+        Assert.Equal(7652.08m, result);
     }
 }

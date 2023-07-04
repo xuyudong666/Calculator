@@ -5,6 +5,9 @@ namespace Calculator.Infrastructure.Mortgages;
 
 public class PublicFundLoanFactory : ILoanCalculatorFactory
 {
-    public ILoanCalculator Create(decimal loanAmount, decimal interestRate, int loanTerm, decimal lpr, decimal spreadRate)
-    => new PublicFundLoanCalculator(loanAmount,interestRate,loanTerm);
+    public ILoanCalculator Create(decimal commercialLoanLoanAmount, decimal commercialInterestRate,
+        int commercialLoanTerm, decimal publicFundLoanAmount,
+        decimal publicFundInterestRate, int publicFundLoanTerm,
+        decimal lpr, decimal spreadRate)
+    => new PublicFundLoanCalculator(publicFundLoanAmount, publicFundInterestRate, publicFundLoanTerm);
 }
