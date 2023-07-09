@@ -10,7 +10,7 @@ namespace Calculator.Application.ViewModels.Regions
     {
         private decimal _amount;
         private EnumMember<LoadTermOfYear> _loadTermOfYear;
-        private InterestRatePattern _interestRatePattern;
+        private EnumMember<InterestRatePattern> _interestRatePattern;
         private decimal _interestRate;
         private int _basePoint;
         private decimal _commercialRate;
@@ -21,7 +21,9 @@ namespace Calculator.Application.ViewModels.Regions
             _amount = 100; //default
             _loadTermOfYear = LoadTermOfYearOps.First();
         }
-        
+
+        public string Title => CalculatorNames.CommercialLoanCalculator;
+
         public decimal Amount
         {
             get => _amount;
@@ -37,11 +39,14 @@ namespace Calculator.Application.ViewModels.Regions
         public IReadOnlyCollection<EnumMember<LoadTermOfYear>> LoadTermOfYearOps { get; private set; }
             = EnumMember<LoadTermOfYear>.GetMembers();
 
-        public InterestRatePattern SelectedInterestRatePattern
+        public EnumMember<InterestRatePattern> SelectedInterestRatePattern
         {
             get => _interestRatePattern;
             set => this.RaiseAndSetIfChanged(ref _interestRatePattern, value);
         }
+
+        public IReadOnlyCollection<EnumMember<InterestRatePattern>> InterestRatePatternOps { get; private set; }
+            = EnumMember<InterestRatePattern>.GetMembers();
 
         public decimal InterestRate
         {
@@ -52,19 +57,19 @@ namespace Calculator.Application.ViewModels.Regions
         public int BasePoint
         {
             get => _basePoint;
-            set => this.RaiseAndSetIfChanged(ref _basePoint, value); 
+            set => this.RaiseAndSetIfChanged(ref _basePoint, value);
         }
 
         public decimal CommercialRate
         {
             get => _commercialRate;
-            set => this.RaiseAndSetIfChanged(ref _commercialRate, value); 
+            set => this.RaiseAndSetIfChanged(ref _commercialRate, value);
         }
 
         public RepaymentScheme SelectedRepaymentScheme
         {
             get => _repaymentScheme;
-            set => this.RaiseAndSetIfChanged(ref _repaymentScheme, value); 
+            set => this.RaiseAndSetIfChanged(ref _repaymentScheme, value);
         }
     }
 }

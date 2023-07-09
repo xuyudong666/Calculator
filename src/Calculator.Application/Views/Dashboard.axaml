@@ -2,8 +2,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:models="clr-namespace:Calculator.Application.Models"
+        xmlns:regions="clr-namespace:Calculator.Application.Views.Regions"
+        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="450"
+        Width="700"
         x:Class="Calculator.Application.Views.Dashboard"
         Title="Dashboard">
-  Welcome to Avalonia!
+    <Window.Styles>
+        <Style Selector="ListBoxItem.navigatorItem">
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
+            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+        </Style>
+    </Window.Styles>
+    <Grid ColumnDefinitions="135 *">
+        <StackPanel Grid.Column="0">
+            <Border Height="100">
+                <TextBlock Text="Logo"></TextBlock>
+            </Border>
+            <ListBox>
+                <ListBoxItem Classes="navigatorItem"
+                             Content="{x:Static models:CalculatorNames.CommercialLoanCalculator}">
+                </ListBoxItem>
+                <ListBoxItem Classes="navigatorItem"
+                             Content="{x:Static models:CalculatorNames.ProvidentFundLoanCalculator}">
+                </ListBoxItem>
+                <ListBoxItem Classes="navigatorItem"
+                             Content="{x:Static models:CalculatorNames.CompositeLoanCalculator}">
+                </ListBoxItem>
+            </ListBox>
+        </StackPanel>
+        <regions:CommercialLoanRegion Grid.Column="1"></regions:CommercialLoanRegion>
+    </Grid>
 </Window>
