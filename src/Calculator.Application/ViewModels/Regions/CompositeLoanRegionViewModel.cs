@@ -1,8 +1,8 @@
-﻿using ReactiveUI;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Calculator.Application.ViewModels.Regions
 {
-    internal class CompositeLoanRegionViewModel : ReactiveObject
+    public partial class CompositeLoanRegionViewModel : ObservableObject
     {
     }
 }

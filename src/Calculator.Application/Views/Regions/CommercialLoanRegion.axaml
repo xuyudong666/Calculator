@@ -1,92 +1,100 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:Calculator.Application.ViewModels.Regions"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Calculator.Application.Views.Regions.CommercialLoanRegion">
-    <UserControl.DataContext>
-        <vm:CommercialLoanRegionViewModel></vm:CommercialLoanRegionViewModel>
-    </UserControl.DataContext>
+<UserControl
+    x:Class="Calculator.Application.Views.Regions.CommercialLoanRegion"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:Calculator.Application.ViewModels.Regions"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
     <UserControl.Styles>
         <Style Selector="TextBlock.Title">
-            <Setter Property="FontSize" Value="24"></Setter>
-            <Setter Property="TextAlignment" Value="Center"></Setter>
-            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
     </UserControl.Styles>
     <Grid RowDefinitions="40 *">
-        <Border Grid.Row="0" Height="50" Margin="0 0 0 48">
-            <TextBlock Classes="Title" Text="{Binding Title}"></TextBlock>
+        <Border
+            Grid.Row="0"
+            Height="50"
+            Margin="0,0,0,48">
+            <TextBlock Classes="Title" Text="{Binding Title}" />
         </Border>
         <Border Grid.Row="1" HorizontalAlignment="Center">
             <StackPanel>
                 <StackPanel.Styles>
                     <Style Selector="StackPanel.Selection">
-                        <Setter Property="Margin" Value="0 0 0 24"></Setter>
+                        <Setter Property="Margin" Value="0 0 0 24" />
                     </Style>
                     <Style Selector="TextBlock.SelectionTitle">
-                        <Setter Property="Margin" Value="0 0 48 0"></Setter>
-                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
-                        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+                        <Setter Property="Margin" Value="0 0 48 0" />
+                        <Setter Property="VerticalAlignment" Value="Center" />
+                        <Setter Property="HorizontalAlignment" Value="Left" />
                     </Style>
                     <Style Selector="ComboBox.SelectionSelector">
-                        <Setter Property="Width" Value="200"></Setter>
+                        <Setter Property="Width" Value="200" />
                     </Style>
                     <Style Selector="TextBox.SelectionSelector">
-                        <Setter Property="Width" Value="200"></Setter>
+                        <Setter Property="Width" Value="200" />
                     </Style>
 
                 </StackPanel.Styles>
                 <StackPanel Classes="Selection" Orientation="Horizontal">
-                    <TextBlock Text="商业贷款" Classes="SelectionTitle"></TextBlock>
-                    <TextBox Classes="SelectionSelector" Text="{Binding Amount}">
-                    </TextBox>
+                    <TextBlock Classes="SelectionTitle" Text="商业贷款" />
+                    <TextBox Classes="SelectionSelector" Text="{Binding Amount}" />
                 </StackPanel>
 
                 <StackPanel Classes="Selection" Orientation="Horizontal">
-                    <TextBlock Text="贷款期限" Classes="SelectionTitle"></TextBlock>
-                    <ComboBox Classes="SelectionSelector" ItemsSource="{Binding LoadTermOfYearOps}"
-                              DisplayMemberBinding="{Binding Name}">
-                    </ComboBox>
+                    <TextBlock Classes="SelectionTitle" Text="贷款期限" />
+                    <ComboBox
+                        Classes="SelectionSelector"
+                        DisplayMemberBinding="{Binding Name}"
+                        ItemsSource="{Binding LoadTermOfYearOps}" />
                 </StackPanel>
 
                 <StackPanel Classes="Selection" Orientation="Horizontal">
-                    <TextBlock Text="贷款利率" Classes="SelectionTitle"></TextBlock>
+                    <TextBlock Classes="SelectionTitle" Text="贷款利率" />
                     <StackPanel x:Name="RatePanel" Orientation="Horizontal">
-                        <ComboBox Width="150" Margin="0 0 12 0" ItemsSource="{Binding InterestRatePatternOps}"
-                                  DisplayMemberBinding="{Binding Name}">
-                        </ComboBox>
-                        <TextBox></TextBox>
+                        <ComboBox
+                            Width="150"
+                            Margin="0,0,12,0"
+                            DisplayMemberBinding="{Binding Name}"
+                            ItemsSource="{Binding InterestRatePatternOps}" />
+                        <TextBox />
                     </StackPanel>
                 </StackPanel>
 
                 <Border IsVisible="True">
                     <StackPanel>
-                        <StackPanel Orientation="Horizontal" Classes="Selection">
-                            <TextBlock Classes="SelectionTitle" Text="基点      "></TextBlock>
-                            <TextBox></TextBox>
+                        <StackPanel Classes="Selection" Orientation="Horizontal">
+                            <TextBlock Classes="SelectionTitle" Text="基点      " />
+                            <TextBox />
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Classes="Selection">
-                            <TextBlock Classes="SelectionTitle" Text="商贷利率"></TextBlock>
-                            <TextBox></TextBox>
-                            <TextBlock Text="+" VerticalAlignment="Center"></TextBlock>
-                            <TextBox></TextBox>
-                            <TextBlock Text="=" VerticalAlignment="Center"></TextBlock>
-                            <TextBox></TextBox>
+                        <StackPanel Classes="Selection" Orientation="Horizontal">
+                            <TextBlock Classes="SelectionTitle" Text="商贷利率" />
+                            <TextBox />
+                            <TextBlock VerticalAlignment="Center" Text="+" />
+                            <TextBox />
+                            <TextBlock VerticalAlignment="Center" Text="=" />
+                            <TextBox />
                         </StackPanel>
                     </StackPanel>
                 </Border>
 
                 <StackPanel Classes="Selection" Orientation="Horizontal">
-                    <TextBlock Text="还款方式" Classes="SelectionTitle"></TextBlock>
-                    <RadioButton Content="等额本息" Margin="0 0 24 0"></RadioButton>
-                    <RadioButton Content="等额本金"></RadioButton>
+                    <TextBlock Classes="SelectionTitle" Text="还款方式" />
+                    <RadioButton Margin="0,0,24,0" Content="等额本息" />
+                    <RadioButton Content="等额本金" />
                 </StackPanel>
 
-                <Button Width="300" HorizontalContentAlignment="Center" Content="计 算" Background="DodgerBlue"
-                        Foreground="White">
-                </Button>
+                <Button
+                    Width="300"
+                    HorizontalContentAlignment="Center"
+                    Background="DodgerBlue"
+                    Content="计 算"
+                    Foreground="White" />
 
             </StackPanel>
         </Border>

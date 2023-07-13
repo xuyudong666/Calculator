@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using Calculator.Application.ViewModels.Regions;
 
 namespace Calculator.Application.Views.Regions
 {
@@ -7,6 +8,7 @@ namespace Calculator.Application.Views.Regions
         public CommercialLoanRegion()
         {
             InitializeComponent();
+            DataContext = App.Current.Services.GetService(typeof(CommercialLoanRegionViewModel));
         }
     }
 }

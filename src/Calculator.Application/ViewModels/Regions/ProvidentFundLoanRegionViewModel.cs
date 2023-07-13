@@ -1,8 +1,8 @@
-﻿using ReactiveUI;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace Calculator.Application.ViewModels.Regions
 {
-    internal class ProvidentFundLoanRegionViewModel : ReactiveObject
+    internal class ProvidentFundLoanRegionViewModel : ObservableObject
     {
     }
 }

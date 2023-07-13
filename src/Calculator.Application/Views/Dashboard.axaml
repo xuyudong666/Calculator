@@ -1,37 +1,34 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:models="clr-namespace:Calculator.Application.Models"
-        xmlns:regions="clr-namespace:Calculator.Application.Views.Regions"
-        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="450"
-        Width="700"
-        x:Class="Calculator.Application.Views.Dashboard"
-        Title="Dashboard">
+<Window
+    x:Class="Calculator.Application.Views.Dashboard"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:Calculator.Application.Models"
+    xmlns:regions="clr-namespace:Calculator.Application.Views.Regions"
+    Title="Dashboard"
+    Width="700"
+    d:DesignHeight="450"
+    d:DesignWidth="700"
+    mc:Ignorable="d">
     <Window.Styles>
         <Style Selector="ListBoxItem.navigatorItem">
-            <Setter Property="Height" Value="50"></Setter>
-            <Setter Property="HorizontalContentAlignment" Value="Left"></Setter>
-            <Setter Property="VerticalContentAlignment" Value="Center"></Setter>
+            <Setter Property="Height" Value="50" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
         </Style>
     </Window.Styles>
     <Grid ColumnDefinitions="135 *">
         <StackPanel Grid.Column="0">
             <Border Height="100">
-                <TextBlock Text="Logo"></TextBlock>
+                <TextBlock Text="Logo" />
             </Border>
             <ListBox>
-                <ListBoxItem Classes="navigatorItem"
-                             Content="{x:Static models:CalculatorNames.CommercialLoanCalculator}">
-                </ListBoxItem>
-                <ListBoxItem Classes="navigatorItem"
-                             Content="{x:Static models:CalculatorNames.ProvidentFundLoanCalculator}">
-                </ListBoxItem>
-                <ListBoxItem Classes="navigatorItem"
-                             Content="{x:Static models:CalculatorNames.CompositeLoanCalculator}">
-                </ListBoxItem>
+                <ListBoxItem Classes="navigatorItem" Content="{x:Static models:CalculatorNames.CommercialLoanCalculator}" />
+                <ListBoxItem Classes="navigatorItem" Content="{x:Static models:CalculatorNames.ProvidentFundLoanCalculator}" />
+                <ListBoxItem Classes="navigatorItem" Content="{x:Static models:CalculatorNames.CompositeLoanCalculator}" />
             </ListBox>
         </StackPanel>
-        <regions:CommercialLoanRegion Grid.Column="1"></regions:CommercialLoanRegion>
+        <regions:CommercialLoanRegion Grid.Column="1" />
     </Grid>
 </Window>

@@ -1,75 +1,45 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Calculator.Application.Entensions;
-using ReactiveUI;
+﻿using Calculator.Application.Extensions;
 using Calculator.Application.Models;
+using Calculator.Application.Services;
+using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.Generic;
 
 namespace Calculator.Application.ViewModels.Regions
 {
-    internal class CommercialLoanRegionViewModel : ReactiveObject
+    public partial class CommercialLoanRegionViewModel : ObservableObject
     {
+        [ObservableProperty]
         private decimal _amount;
-        private EnumMember<LoadTermOfYear> _loadTermOfYear;
-        private EnumMember<InterestRatePattern> _interestRatePattern;
+
+        [ObservableProperty]
+        private EnumMember<LoadTermOfYear>? _selectedLoadTermOfYear;
+
+        [ObservableProperty]
+        private EnumMember<InterestRatePattern>? _selectedInterestRatePattern;
+
+        [ObservableProperty]
         private decimal _interestRate;
+
+        [ObservableProperty]
         private int _basePoint;
+
+        [ObservableProperty]
         private decimal _commercialRate;
+
+        [ObservableProperty]
         private RepaymentScheme _repaymentScheme;
 
-        public CommercialLoanRegionViewModel()
+        public CommercialLoanRegionViewModel(DemoService demoService)
         {
-            _amount = 100; //default
-            _loadTermOfYear = LoadTermOfYearOps.First();
+            var a = demoService.Get();
         }
 
-        public string Title => CalculatorNames.CommercialLoanCalculator;
-
-        public decimal Amount
-        {
-            get => _amount;
-            set => this.RaiseAndSetIfChanged(ref _amount, value);
-        }
-
-        public EnumMember<LoadTermOfYear> SelectedLoadTermOfYear
-        {
-            get => _loadTermOfYear;
-            set => this.RaiseAndSetIfChanged(ref _loadTermOfYear, value);
-        }
+        public static string Title => CalculatorNames.CommercialLoanCalculator;
 
         public IReadOnlyCollection<EnumMember<LoadTermOfYear>> LoadTermOfYearOps { get; private set; }
             = EnumMember<LoadTermOfYear>.GetMembers();
 
-        public EnumMember<InterestRatePattern> SelectedInterestRatePattern
-        {
-            get => _interestRatePattern;
-            set => this.RaiseAndSetIfChanged(ref _interestRatePattern, value);
-        }
-
         public IReadOnlyCollection<EnumMember<InterestRatePattern>> InterestRatePatternOps { get; private set; }
             = EnumMember<InterestRatePattern>.GetMembers();
-
-        public decimal InterestRate
-        {
-            get => _interestRate;
-            set => this.RaiseAndSetIfChanged(ref _interestRate, value);
-        }
-
-        public int BasePoint
-        {
-            get => _basePoint;
-            set => this.RaiseAndSetIfChanged(ref _basePoint, value);
-        }
-
-        public decimal CommercialRate
-        {
-            get => _commercialRate;
-            set => this.RaiseAndSetIfChanged(ref _commercialRate, value);
-        }
-
-        public RepaymentScheme SelectedRepaymentScheme
-        {
-            get => _repaymentScheme;
-            set => this.RaiseAndSetIfChanged(ref _repaymentScheme, value);
-        }
     }
 }
